@@ -1,9 +1,10 @@
 from math import sqrt
 import requests
 import time
+import os
 
 # Settings
-masterAddress = 'http://master:5000'
+masterAddress = os.environ['MASTERADDRESS']
 
 def calcPrime(minRange, maxRange):
     nummers = []
