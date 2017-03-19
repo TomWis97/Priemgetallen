@@ -6,4 +6,5 @@ COPY master.py /master.py
 COPY config.ini /data/config.ini
 RUN python3 /master.py & proc=$! && sleep 3 && curl -i http://localhost:5000/api/init && kill -s SIGINT $proc
 VOLUME /data
+EXPOSE 5000
 CMD python3 /master.py
